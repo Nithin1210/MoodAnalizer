@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Net;
 
-namespace MoodAnaliser
+namespace MoodAnaliserProblem
 {
     public class MoodAnalyser
     {
@@ -12,10 +12,17 @@ namespace MoodAnaliser
         }
         public string AnalyseMood()
         {
+            try
+            {
 
-            if (message.Contains("Sad"))
-                return "SAD";
-            return "HAPPY";
+                if (message.Contains("Sad"))
+                    return "SAD";
+                return "HAPPY";
+            }
+            catch (NullReferenceException)
+            {
+                return "HAPPY";
+            }
 
         }
     }
